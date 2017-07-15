@@ -124,11 +124,6 @@ class Base62Test extends TestCase
         $encodedDataDefault = $base62default->encode($rawData);
         $encodedDataSalted = $base62salted->encode($rawData);
 
-        echo PHP_EOL;
-        echo (new Base62())->encode('Hello World!') . PHP_EOL;
-        echo (new Base62('', '0123456789abcdefghijklmnopqrstuvwxyz'))->encode('Hello World!') . PHP_EOL;
-        echo (new Base62('my_secret_salt', '0123456789abcdefghijklmnopqrstuvwxyz'))->encode('Hello World!') . PHP_EOL;
-
         $this->assertNotEmpty($encodedDataDefault);
         $this->assertNotEmpty($encodedDataSalted);
         $this->assertNotEquals($encodedDataDefault, $encodedDataSalted);
