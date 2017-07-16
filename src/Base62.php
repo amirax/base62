@@ -134,9 +134,9 @@ class Base62 implements Base62Interface
         for ($i = strlen($alphabet) - 1, $v = 0, $p = 0; $i > 0; $i--, $v++) {
             $v %= $saltLength;
             $p += $int = ord($salt[$v]);
-            $j = ($int + $v + $p) % $i;
-            $temp = $alphabet[$j];
-            $alphabet[$j] = $alphabet[$i];
+            $idx = ($int + $v + $p) % $i;
+            $temp = $alphabet[$idx];
+            $alphabet[$idx] = $alphabet[$i];
             $alphabet[$i] = $temp;
         }
 

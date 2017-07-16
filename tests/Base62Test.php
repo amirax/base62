@@ -60,7 +60,7 @@ class Base62Test extends TestCase
         $base62 = new Base62();
         foreach ($phrases as $phrase) {
             $encodedData = $base62->encode($phrase);
-            $this->assertEquals($phrase, $decodedData = $base62->decode($encodedData));
+            $this->assertEquals($phrase, $base62->decode($encodedData));
             $this->assertNotEmpty($encodedData);
         }
     }
