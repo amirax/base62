@@ -1,5 +1,10 @@
 # Base62 encoder and decoder
 
+[![Latest Version](https://img.shields.io/packagist/v/amirax/base62.svg?style=flat)](https://packagist.org/packages/amirax/base62)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/amirax/base62/master.svg?style=flat)](https://travis-ci.org/amirax/base62)
+[![Codacy grade](https://img.shields.io/codacy/grade/bdc656a107dd4d64a526818facd960a0.svg?style=flat)]()
+
 ## Install
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
