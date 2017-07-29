@@ -99,6 +99,7 @@ class Base62 implements Base62Interface
     protected function converter(array $source, $sourceBase, $distBase)
     {
         $result = [];
+        $sourceInit = (count($source) > 1) ? $source[0] : null;
         while ($count = count($source)) {
             $remainder = 0;
             $quotient = [];
@@ -112,6 +113,11 @@ class Base62 implements Base62Interface
             }
             array_unshift($result, $remainder);
             $source = $quotient;
+        }
+
+        // Fix leading zero
+        if ($sourceInit === 0) {
+            array_unshift($result, $sourceInit);
         }
 
         return $result;

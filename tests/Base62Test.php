@@ -65,10 +65,19 @@ class Base62Test extends TestCase
         }
     }
 
-    public function testLeadingZero()
+    public function testZeroByte()
     {
         $base62 = new Base62();
-        $rawData = hex2bin('0ba5722c99514fb47713');
+        $rawData = hex2bin('00');
+        $encodedData = $base62->encode($rawData);
+        $this->assertEquals($rawData, $base62->decode($encodedData));
+        $this->assertNotEquals('', $encodedData);
+    }
+
+    public function testLeadingZeroByte()
+    {
+        $base62 = new Base62();
+        $rawData = hex2bin('0020890b7cfd212aa1149a502fb95e9b5f4ad9580abc1d4ded');
         $encodedData = $base62->encode($rawData);
         $this->assertEquals($rawData, $base62->decode($encodedData));
         $this->assertNotEmpty($encodedData);
